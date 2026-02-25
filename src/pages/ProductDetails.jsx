@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/set-state-in-effect */
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { getProductById } from "../data/products";
@@ -15,7 +14,7 @@ export default function ProductDetails() {
       return;
     }
     setProduct(foundProduct);
-  }, [id]);
+  }, [id, navigate]);
 
   if (!product) {
     return <h1>Loading...</h1>;
